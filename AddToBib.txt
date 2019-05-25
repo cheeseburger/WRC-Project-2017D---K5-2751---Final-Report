@@ -1,0 +1,54 @@
+@article{davies2016researching,
+  title={Researching the emerging impacts of open data: revisiting the ODDC conceptual framework},
+  author={Davies, Tim and Perini, Fernando},
+  journal={The Journal of Community Informatics},
+  volume={12},
+  number={2},
+  year={2016}
+}
+
+@article{perkmann2015open,
+  title={Open data partnerships between firms and universities: The role of boundary organizations},
+  author={Perkmann, Markus and Schildt, Henri},
+  journal={Research Policy},
+  volume={44},
+  number={5},
+  pages={1133--1143},
+  year={2015},
+  publisher={Elsevier}
+}
+
+@article{turner2015free,
+  title={Free and open-access satellite data are key to biodiversity conservation},
+  author={Turner, Woody and Rondinini, Carlo and Pettorelli, Nathalie
+  and Mora, Brice and Leidner, Allison K and Szantoi, Zoltan and
+  Buchanan, Graeme and Dech, Stefan and Dwyer, John and Herold, Martin
+  and others},
+  journal={Biological Conservation},
+  volume={182},
+  pages={173--176},
+  year={2015},
+  publisher={Elsevier}
+}
+@book{kitchin2014data,
+  title={{The data revolution: Big data, open data, data infrastructures and their consequences}},
+  author={Kitchin, Rob},
+  year={2014},
+  publisher={Sage}
+}
+
+@article{abbasi2016big,
+  title={{Big data research in information systems: Toward an inclusive research agenda.}},
+  author={Abbasi, Ahmed and Sarker, Suprateek and Chiang, Roger HL},
+  journal={Journal of the Association for Information Systems},
+  volume={17},
+  number={2},
+  year={2016}
+}
+
+@techreport{fontes2017impacts,
+  title={{Impacts of Weather Conditions in Urban Public Transport:
+  Understanding the Effects of Climatic Changes Using Big Data}},
+  author={Fontes, T{\^a}nia and Costa, Vera and Dias, Teresa Galv{\~a}o},
+  year={2017}
+}
