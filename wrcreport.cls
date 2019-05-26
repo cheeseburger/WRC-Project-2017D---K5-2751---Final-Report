@@ -275,9 +275,9 @@
 
 {\large \bfseries by}\\[2cm]
 
-{\large \bfseries {Roelof Burger, Henno Havenga, Monray Belelie, Nisa Ayob,  and Paul Kucera}} \\[2cm]
+{\large \bfseries {Roelof Burger, Henno Havenga, Monray Belelie, Nisa Ayob,  and Paul Kucera}} \\[2.5cm]
 
-{\huge \bfseries {North-West University}} \\[2cm]
+{\Large \bfseries {North-West University}} \\[2cm]
 {\large \bfseries May 2019} \\[0.5cm]
 \includegraphics[width=3.5cm]{WRC-logo}
 \end{center}  
