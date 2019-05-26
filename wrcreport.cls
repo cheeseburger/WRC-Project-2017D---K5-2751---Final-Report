@@ -340,8 +340,8 @@
 %      \put(0,-130){\parbox[t]{15cm}{\color{Gray}\tinfo@font{11
 %            Hoffman Street \\ Potchefstroom \\ 2531 \\ www.nwu.ac.za}}}
       \put(-20,-570){\centerline{\author@font{\color{Gray}
-            Report on deliverable 3}}} 
-      \put(-20,-590){\centerline{\tinfo@font{\color{Gray}March 2018}}} 
+            Final Report }}} 
+      \put(-20,-590){\centerline{\tinfo@font{\color{Gray}May 2019}}} 
     \end{picture}
 %
 %    \begin{picture}(100,535)(0,0) 

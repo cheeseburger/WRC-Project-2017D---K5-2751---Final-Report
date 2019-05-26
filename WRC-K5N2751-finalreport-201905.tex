@@ -12,9 +12,7 @@
 \usepackage{siunitx}
 \usepackage{minitoc}
 \usepackage{pdfpages}
-
 %\usepackage[a4paper,lmargin=3.0cm, rmargin=1.0cm,tmargin=3.5cm,bmargin=2.50cm]{geometry}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Reset text/figure fractions to more reasonable values
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -78,7 +76,7 @@
   \renewcommand{\footrulewidth}{0pt}% Footer rule
   \fancyhf{}% Clear header/footer
   \fancyhead[L]{\scshape\leftmark}% Chapter in header Left
-  \fancyhead[R]{WRC Progress Report K5 Number: 2062}% Page number in header Right
+  \fancyhead[R]{WRC Report K5-2062}% Page number in header Right
   \renewcommand{\headrulewidth}{\iffloatpage{0pt}{0pt}}
   \fancyfoot[C]{-\thepage-} % Page number at the bottom 
 }
@@ -375,58 +373,20 @@ management and quantitative precipitation estimation in South Africa.
 \section{Aim and objectives}
 \label{sec:obj}
 
-This project aims to build local capacity by providing infrastructure,
-developing a state of the art integrated rainfall product, and
-providing the scientific community real-time access to data and
-products. More specifically, the aims are:
+This project aims to build local capacity by evaluating observations of rainfall and emerging technologies providing to provide products in near real-time to the scientific communitity. The objectives to reach this aim can be articulated as follows:
 
 \begin{enumerate}
-\item Capacity building in quantitative precipitation estimation and
-    weather radar to ensure sustainability of precipitation monitoring
-    infrastructure in South Africa \item High-resolution real-time weather
-    radar, tipping bucket rain gauges, disdrometer and general weather
-    data for the Mooi river catchment accessible by the research community
-\item Developing local, affordable weather stations for use in community rainfall observation network
+\item Build capacity in quantitative precipitation estimation and weather radar to ensure sustainability of precipitation monitoring infrastructure in South Africa
+\item Collate high-resolution real-time weather radar, tipping bucket rain gauges, disdrometer and general weather data for southern Africa, focussing on the Mooi river catchment 
+\item Explore and developing local, affordable technologies to facilitate real time observations
 \item Communicating precipitation observations to interested communities using appropriate platforms
 \end{enumerate}
 
-The deliverables for the project was defined as:
 
-\begin{enumerate}
-\item \SI{10}{\percent} advance
-\item Inception report
-\item Real-time data from the Mooi river network 
-\item Progress meeting 
-\item Final report
-\end{enumerate}
-
-This document report on deliverable 3, namely real-time data from the
-Mooi river network. The report is suppose to present the conclusions
-of the inception reference group meeting. However, this meeting has
-not been completed and to satisfy the requirements of the project,
-this progress report is submitted in its place.
-
-\section{Project outcomes}
-
-The expected outcomes of the project includes:
-\begin{itemize}
-\item real-time access to high-resolution rainfall data in the pilot area;
-\item Science graduates capable of evaluating the performance of weather radars and creating customized derived products for real-world application;
-\item Engineering graduates capable of maintaining and re-engineering weather radars;
-\item A high resolution rain-gauge dataset for use by the scientific community;
-\item Radar data for use by the scientific community;
-\item Disdrometer data for use by the scientific community;
-\item A web-based real-time service that provides access to data and derived products;
-\item A methodology to re-engineer old Enterprise radars to extend their lifetime and improve its quality of data;
-\item Cheap weather stations developed using open-source, off-the-shelf and 3D printing technologies for use in community science projects.
-\end{itemize}
-
-\chapter{Proposed methodology}
+\chapter{Methodology}
 \label{chap:meth}
 
-The proposed methodology that targets the full project is repeated
-here. The following chapters will describe the progress on the third
-deliverable.
+The approach taken to pursue the objectives state in Section~\ref{sec:obj} are outlined in this chapter.
 
 \section{Capacity building}
 
@@ -445,13 +405,11 @@ project team. The project team is made up of individuals from
 \midrule
 Roelof Burger & \gls{nwu}& Principle investigator \\
 Paul Kucera  & \gls{ncar}& Collaborating scientist \\
+Henno Havenga & \gls{nwu} & PhD Student \\
 Runyararo Matandirotya & \gls{nwu} & PhD Student \\
 Jaun van Loggerenberg & \gls{nwu} & PhD Student \\
-Henno Havenga & \gls{nwu} & PhD Student \\
 Nisa Ayob & \gls{nwu} & MSc Student \\
 Francois du Plessis & \gls{nwu} & MSc Student \\
-Minette Minaar & \gls{nwu} & Honours student \\
-Sue-Nique Davies & \gls{nwu} & Honours student \\
 \bottomrule 
 \end{tabular}
 \end{center}
@@ -626,13 +584,119 @@ develop precipitation products that is both understandable and useful
 to these communities. Mixed-method research methodologies using open-
 ended questionnaires will be used as part of this aim.
 
-\chapter{Real-time data access}
-\label{chap:real-time}
+\section{Data management}
+
+The focus of this project is to provide real-time data to stakehoders.
+The ammount of data generated is significant. Including data products
+can reach up to \SI{1}{Gb} per day. The \gls{crg} are therefore being
+forced to implement a solid data management plan in order to ensure
+the availability and reliability of data. 
+
+The \gls{crg} currently collects data from a variety of sources for
+research purposes. An overview of the work flow is shown in
+Figure~\ref{fig:workflow}. The \gls{nwu} Lekwena C Band radar is in
+the process of becoming fully operational while the Mooi River Rain
+Gauge network has been deployed and is up and running. Along with
+these operational instruments, the \gls{nwu} actively runs it's own
+\gls{gfs} and \gls{wrf} models. All the data is used by students and
+researchers to understand various land system interaction and
+processes. The following chapter describes the current scientific
+tools and data management systems in use by the \gls{crg}.
+
+\subsection{Reanalysis Data} The \gls{crg} currently has several servers
+running on the \gls{nwu} network (See Chapter~\ref{chap:real-time}).
+Currently Bongani is used as backup solution for radar data and
+configuration files. The second local server is the \textit{Titan5}
+dedicated radar host. The Titan network links to \textit{Gaia} used as
+a web host to provide the radar data to the public. The \gls{crg} also
+has access to the \gls{nwu-hpc}, a 32 core Linux server maintained by
+the \gls{nwu}, the \gls{nwu-hpc} is used for running low resolution
+weather simulations using \gls{wrf} and testing compiling and run time
+options for various climate models.  The \gls{crg} also has access to
+the \gls{ncar} Yellowstone supercomputer for high resolution modeling.
+
+\subsection{Radar Data} The radar data is stored on both the radar1 and
+radar2 servers. It is futher transferred to an onine Dropbox cloud
+storage account. All students have access to a allocated Dropbox
+account where they are required to store all data collected as part of
+their research. Dropbox has been the best cloud solution as it has
+Linux, Windows and Mac clients. Data stored and managed trough this
+cloud solution has been a key part in case of system failure and
+theft.
+
+\subsection{Satellite Data} Satellite data for the study area are being
+served through the project website. These products will be further
+integrated into the project website over the next year.
+
+\begin{figure}
+\includegraphics[width=\textwidth]{ComputerSolutions.pdf}
+\caption[NWU CRG Data Management Setup]{The diagram indicates the
+current work flow related to the NWU CRG data management strategy. The
+data management starts on local computers assigned to all students,
+technicians and researchers. The \gls{crg} has several local servers
+on which data is then stored and managed for access across the project
+team, this includes \textit{bongani} and Drobox. The radar data
+collected feeds directly to two dedicated servers - \textit{titan5}
+and \textit{gaia}. Gaia also hosts the radar visualization that is
+shown on the websites.}
+\label{fig:data_workflow}
+\end{figure}
+
+\subsection{Observational Data}
+
+A network of rain gauges are being fitted with modems to provide
+real-time access to rainfall and other weather parameters. These
+datasets are also served through the website.
+
+\section{Data visualization}
+Visualizing data products plays an important role for user friendly interpretation
+and also spatial temporal representation of data. Currently GFS model data is
+visualized every day to provide an 48 hour forecast to users whom access the
+www.lekwenaradar.com. Further development is in place to provide a real-time
+analysis of rainfall trends data in the Mooi River catchment, this is dependant upon
+the deployment of LORA and Foxnet networks. The
+radar products are continually being improved for the web interface.
+
+\section{Cloud Storage}
+For data backup a 2 terabyte Dropbox cloud solution was acquired.
+Dropbox is only used as for backup of data in case of server failure.
+All students have access to a allocated Dropbox account where they are
+required to store all data collected as part of their research.
+Dropbox has been the best cloud solution as it has Linux, Windows and
+Mac clients. Data stored and managed trough this cloud solution has
+been a key part in case of system failure and theft.
+
+\section{Connecting CRG projects}
+Figure \ref{fig:data} provides an indication of the holistic nature
+related to the \gls{crg} research.  The major focuses groups include
+the real-time weather and climatology initiatives while the second
+major focus is related to air pollution studies. These two fields are
+not seen as independent pillars within the research group, but instead
+as one major end goal. These two fields are examined to quantitatively
+understand the effects that each may have on the other.  The main
+motivation behind the research done at the \gls{crg} is to improve the
+lives of the local communities who suffer the most from these impacts
+related to climate change and health problems from pollution.
+
+\begin{figure}[htp]
+\includegraphics[width=\textwidth]{intersectional.pdf}
+\caption[NWU CRG Resrearch Intersections]{The diagram indicates how
+the different sources of data the CRG works with connects to each
+other. All these data sources add up to a significant of amount of
+data collected on a daily basis. Without a structured plan and
+management system data could get lost, mismanaged or never analysed at
+all. One of the main goals of the CRG is to create a sustainable data
+management system that other organisations can use and build upon. The
+CRG also strives to create an open access database where researchers
+and students can access data free of charge} \label{fig:data}
+\end{figure}
+
+\chapter{High resolution rainfall observations}
+\label{chap:rainfall}
 
 
-\chapter{Real-time data access}
+\chapter{Technologies to facilitate real-time rainfall observations}
 \label{chap:real-time}
-%\chapter{Real-time access to the NWU Lekwena radar data}
 
 This project currently collects data from a variety of sources. The
 \gls{nwu} Lekwena C Band radar is in the process of becoming fully
@@ -887,26 +951,326 @@ before (Section~\ref{sec:radar2}).
  \label{fig:website}
 \end{figure}
 
-\chapter{Data management}
+Technology has become cheaper and more accessible than ever. A range of low-cost sensors has created exciting opportunities to make measurements at a fraction of the cost of previous generations. One of the objectives of this project is to develop local low-cost solutions to observe weather and specifically precipitation. A network of these sensors can be used to bias-correct and evaluate the radar rainfall estimates.
 
-The focus of this project is to provide real-time data to stakehoders.
-The ammount of data generated is significant. Including data products
-can reach up to \SI{1}{Gb} per day. The \gls{crg} are therefore being
-forced to implement a solid data management plan in order to ensure
-the availability and reliability of data. 
+One of the key functions of an observation network is communication. Having access to realtime, or near realtime observations enable a range of new applications. This is also a key component of the low-cost solutions being explored by this project.
 
-The \gls{crg} currently collects data from a variety of sources for
-research purposes. An overview of the work flow is shown in
-Figure~\ref{fig:workflow}. The \gls{nwu} Lekwena C Band radar is in
-the process of becoming fully operational while the Mooi River Rain
-Gauge network has been deployed and is up and running. Along with
-these operational instruments, the \gls{nwu} actively runs it's own
-\gls{gfs} and \gls{wrf} models. All the data is used by students and
-researchers to understand various land system interaction and
-processes. The following chapter describes the current scientific
-tools and data management systems in use by the \gls{crg}.
+\section{Logging technology}
 
-\section{Reanalysis Data} The \gls{crg} currently has several servers
+The logging device forms the heart of the observation system. during a previous project, \gls{wrc} project K5-2062, a low-cost logger was developed that could acquire data from rain gauges as well as other devices. The only drawback of these loggers were that they still required an external modem to communicate the data. For this project, the loggers were extended in order to accept different communication modules (Figure~\ref{fig:logger}). These were built into water-proof boxes and fitted with a small power unit that contains a 18650 li-on rechargeable battery and a small power station. These are capable of running the logger until the battery fails and can even provide additional power for instruments like the WXT530 Vaisala multi sensor.
+
+\begin{figure}[!htp]
+  \begin{center}
+\includegraphics[width=0.5\textwidth]{esd-logger.jpg}
+  \end{center}
+  \caption[The low cost logger developed for the project.]{The low cost logger developed for the project.}
+  \label{fig:logger}
+\end{figure}
+
+\begin{figure}[!htp]
+  \begin{center}
+\includegraphics[width=0.8\textwidth]{logger-power.jpg}
+  \end{center}
+  \caption[The low cost logger power module.]{The low cost logger power module that features a rechargeble battery and a small solar panel.}
+  \label{fig:loggerpower}
+\end{figure}
+
+\section{Communication technology}
+
+Communication of data to a central server is typically a power hungry component of the observation system. The most common means to transmit data from weather stations are GPRS or 3G using the GSM networks. The power requirements for this technology requires large batteries and solar panels, if indeed it is possible to work without a continuous power supply.
+
+A range of new technologies have been developed in recent years that greatly lowers the power requirements for devices that only need to transmit a small amount of data, like an automatic weather station. All of these are being tested as part of this project (Figure~\ref{fig:bees}).
+
+\begin{figure}[!htp]
+  \begin{center}
+    \includegraphics[width=\textwidth]{Bees.jpg}
+  \end{center}
+  \caption[The different communication modules developed.]{The different communication modules developed. The left one is for the SigFox network, the middle one for the LoRa network and the right one is a GSM modem that could be used for GPRS or ThingStream.}
+\label{fig:bees}
+\end{figure}
+
+\subsection{The Sigfox network}
+
+The first technology that was evaluated was SigFox (\url{http://www.sigfox.com}). This is a commercial internet-of-things network that provides a network ready for low power communication. A module was developed (Figure~\ref{fig:bees}) to interface with the logger and 10 units were placed for evaluation. The data is retrieved from the Sigfox server and served to an intermediate MQT server that was set up and managed by the project team. 
+
+\subsection{The LoRa network}
+
+The second technology that are being evaluated is LoRa. It is similar to the SigFox network, but the user has to establish the network by deploying LoRa gateways (Figure~\ref{fig:lora}). Two of these gateways were procured and are in the process of being deployed in the Mooi River network. A module was also developed to interface with the logger (Figure~\ref{fig:bees}).
+
+\begin{figure}[!htp]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{LORA-gateway.jpg}
+  \end{center}
+  \caption[A LORA gateway.]{A LORA gateway that creates a network working on near-line-of-sight and cover an area of approximately 60km in radius, depending on the topography.}
+\label{fig:lora}
+\end{figure}
+
+\subsection{The ThingStream network}
+
+The last low-power communication technology to evaluate is ThingStream (\url{https://thingstream.io}). This network uses the GSM network in a low-power mode. Initial tests in the laboratory shows that the power consumption of these modules are considerably more than SigFox or LORA, but still lower than traditional GSM technologies. The benefit of ThingStream is that it uses the well established GSM network. For this reason, it is included in the evaluation. The team has procured an appropreate GSM modem (Figure~\ref{fig:bees}) and has ordered 10 sim cards to evaluate this on the Mooi River network. 
+
+\section{Low-cost hardware}
+
+The second component of the low-cost technology to evaluate is the sensors to measure weather and precipitation. A range of different sensors are being deployed. These include a low-cost tipping bucket (Figure~\ref{fig:logger1}), a self-developed low-cost automatic weather station from off-the-shelf sensors (Figure~\ref{fig:logger2}) and mid range Vaisala multisensor WXT530 (Figure~\ref{fig:logger3}).
+
+These sensors have been deployed in the Mooi River network and are currently serving data to the MQT server.
+
+\begin{figure}[!htp]
+  \begin{center}
+\includegraphics[width=0.8\textwidth]{RainLogger_1.jpg}
+  \end{center}
+  \caption[The lowest cost logger, modem and low cost raingauge developed for the project]{The lowest cost logger, modem and low cost raingauge developed for the project. This combintation costs in the order of R5000.}
+  \label{fig:logger1}
+\end{figure}
+
+\begin{figure}[!htp]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{WeatherStation_1.jpg}
+  \end{center}
+  \caption[The logger, modem and low cost weather station developed for the project.]{The logger, modem and low cost weather station developed for the project. This combination costs in the order of R8000.}
+\label{fig:logger2}
+\end{figure}
+
+\begin{figure}[!htp]
+  \begin{center}
+    \includegraphics[width=\textwidth]{vaisala-wxt530.jpg}
+  \end{center}
+  \caption[The logger, modem and mid range weather station developed for the project.]{The logger, modem and mid range weather station developed for the project. This combination uses the Vaisala Multisensor WXT530. The combination costs in the order of R50 000.}
+\label{fig:logger3}
+\end{figure}
+
+\chapter{Communicating real time observations}
+\label{chap:cumminicating}
+%\chapter{Real-time access to the NWU Lekwena radar data}
+
+\chapter[Capacity building and communication]{Capacity building and communication of results}
+\label{chap:capacity}
+%\chapter{Real-time access to the NWU Lekwena radar data}
+
+One of the main justifications for this project is building capacity in precipitation observation science to ensure the sustainability of these infrastructure in South Africa. Activities that were pursued in order to achieve this aim includes training of students, international collaboration and a national weather radar workshop.
+
+\section{Building capacity in students}
+
+This project provides the opportunity to expose students to a living laboratory. The infrastructure that has been established matches closely those used by \gls{saws} and other institutes. 
+
+\subsection{Undergraduate students at the NWU}
+
+Students at the undergraduate level are exposed to the radar and weather observations through a course at the second and third year. Online tutorials developed by COMET at \gls{ucar} on radar, satellite and precipitation science play an important role in this. Students have to complete ten of these tutorials. At the third year, students have to perform a research project in groups. A tutorial is being develop to train 3rd year students on the basics of weather radar. This will be delivered to students between 18 July and 21 October 2018.
+
+\subsection{Honours students at the NWU}
+
+A honours module has been develop at the \gls{nwu} that gives students an introduction to earth observation. As part of this module, students get to work with the radar, the weather stations and rain gauges. Through this project, students get hands-on experience with radar and other observational technologies.
+
+Two of the students also focus their research component of their honours program on the infrastructure developed through this project (See Table~\ref{table:students}).
+
+
+\begin{table}[!htbp]
+\caption{Fourth year honours students who participated in the project. The students in bold italics completed research projects related to the project.}
+\label{table:honoursstudents}
+\begin{center}
+\begin{tabular}{ l l l } 
+\toprule
+\bfseries Name & \bfseries Student nr & \bfseries Year \\
+\midrule
+\bfseries\itshape Lindiwe      Khumalo   &    25395904 & 2019 \\
+\bfseries\itshape Dlangamandla Moletsane &    27770826 & 2019 \\
+Nzuzo        Shongwe   &    28311108 & 2019 \\
+\bfseries\itshape Lerato       Tshisi    &    27032175 & 2019 \\
+\bfseries\itshape Leandri      Wessels   &    27227715 & 2019 \\
+\midrule
+\bfseries\itshape Prince    Chidhindi &   25267108 & 2018 \\
+Michael   Cloete    &   26062232 & 2018 \\
+\bfseries\itshape Desire\'e   Coen      &   25886584 & 2018 \\
+\bfseries\itshape Sue-Nique Davies    &   25945009 & 2018 \\
+\bfseries\itshape Orlinda   Mafika    &   26918676 & 2018 \\
+\bfseries\itshape Tlhomaro  Marebane  &   29570433 & 2018 \\
+\bfseries\itshape Marizanne Minnaar   &   26125226 & 2018 \\
+\midrule
+\bfseries\itshape Chante      Cronje     & 25184954 & 2017 \\
+\bfseries\itshape Laurike     De Beer    & 24927945 & 2017 \\
+\bfseries\itshape Francois    Du Plessis & 25050524 & 2017 \\
+\bfseries\itshape Ketshepaone Modise     & 24362565 & 2017 \\
+Janette     Murray     & 25060384 & 2017 \\
+Scott       Van Eeden  & 24232246 & 2017 \\
+Il\'an        Van Staden & 24976482 & 2017 \\
+Pierre      Venter     & 25417312 & 2017 \\
+\bottomrule 
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\subsection{Masters and PhD students at the NWU}
+
+This project helps to fund three MSc students and partially funds thwo  PhD students (Table~\ref{table:students}).
+
+\begin{table}[!htbp]
+\caption{Project team for 2017/2018/2019}
+\label{table:students}
+\begin{center}
+\begin{tabular}{ l l l } 
+\toprule
+\bfseries Person & \bfseries Affiliation \\
+\midrule
+Runyararo Matandirotya & \gls{nwu} & PhD Student \\
+Jaun van Loggerenberg & \gls{nwu} & PhD Student \\
+Henno Havenga & \gls{nwu} & MSc Student \\
+Francois du Plessis & \gls{nwu} & MSc Student \\
+Nisa Ayob & \gls{nwu} & MSc Student \\
+Francois du Plessis & \gls{nwu} & MSc Student \\
+\bottomrule 
+\end{tabular}
+\end{center}
+\end{table}
+
+Henno Havenga, 2018, NWU, MSc
+Synoptic drivers of severe hail storms over the South African Highveld
+(student nr 22743529)
+
+Nisa Ayob, 2019, NWU, MSc
+Hail nowcasting over the South African Highveld
+(student nr 23799110)
+
+
+
+Francois Du Plessis, 25050524, MSc
+
+PhD
+Newton Matandirotya, 29806062
+Henno Havenga, 2018, NWU, MSc
+
+
+\section{International collaboration}
+
+Strong ties with a number of international organisations and institutes have been forged as part of this project. This includes \gls{ncar}, \gls{noaa} and \gls{globe}. Delegates visited South Africa in May 2017 and again during April 2018.
+
+A meeting was held on 15 May 2017 to coordinate potential collaboration between \gls{saws}, \gls{globe} and the project team. Dr Kucera and Dr Steinson are the principle investigators of a project called 3DPAWS. The aim of this project is to build capacity at national weather services by providing them with low-cost sensors and 3D printed weather stations. Workshops are held to teach participants to build their own weather stations. This technology has been transferred to the project team and the first 3DPAWS stations is almost ready to be deployed.   
+
+\begin{table}[!htbp]
+  \begin{center}
+\caption{Participants of the international meeting held at SAWS on 15 May 2017.}
+\label{table:team}
+\begin{tabular}{ l l }
+\toprule
+\bfseries Person & \bfseries Affiliation \\
+\midrule
+Roelof Burger & \gls{nwu} \\
+Paul Kucera & \gls{ncar} \\
+Martin Steinson & \gls{noaa} \\
+Mark Brettenny & \gls{globe} \\
+Jongikhaya Witi & \gls{saws} \\
+Mahlako Lemekoane & \gls{saws} \\
+Johan Stander & \gls{saws} \\
+\bottomrule
+\end{tabular}
+  \end{center}
+\end{table}
+
+A second visit by Dr Paul Kucera in March 2018 further strengthened international collaboration. During this meeting, the upcoming 3DPAWS workshop in September 2018 was planned.
+
+Dr Burger visited \gls{ncar} during May 2018. During this visit, two presentations were made at the annual \gls{wma} meeting. These were:
+
+\underline{\textbf{Burger, R.P.}}, 2018: Potential new technologies to assist cost-effective evaluation of seeding. Improving thunderstorm identification and tracking to support weather modification projects. Annual Weather Modification Association meeting in Estes Park, Colorado, USA, April 24-27 2018
+
+Hiscutt, F, \underline{\textbf{Burger, R.P.}} and P Kucera, 2018: Annual Weather Modification Association meeting in Estes Park, Colorado, USA, April 24-27 2018
+
+\section{LROSE/Radar workshop between 30 July 2018 and 3 August}
+
+A radar workshop is planned as part of the project. Invitations will be sent to all universities. The workshop is being organised in coordination with \gls{saws}. Participants from other universities will also be invited.
+
+\section{3DPAWS workshop in September 2018}
+
+The team is planning a workshop on low-cost weather stations during the first two weeks of September. 
+
+\section{Meted tutorials}
+
+One of the challenges of this project is to ensure that the infrastructure and capacity developed at the \gls{nwu} benefits students and researchers at all institutes of higher learning. One potential vehicle is online resources for the South African community. The project website is one of these and Meted tutorials another.
+
+The project team has made contact with the UCAR COMET program which currently hosts online training material for atmospheric science. The potential to include regional specific content into the existing modules was discussed. While the existing online tutorials already provide a great resource for meteorology and climatology students, most of the content uses examples from other parts of the world. With the goal of locally relevant education, this would make this online resource more useful for South African universities, as well as \gls{saws}. The team is exploring the potential of coordinating this effort.
+
+\section{Launch of the Lekwena radar}
+
+A media event was held on 30 March 2018. All stakeholders were invited to the event, including \gls{wrc}, \gls{saws}, Aon-Benfield, Senwes, and the top management of \gls{nwu}. The program of the meeting was directed by Mr Dhesigen Naidoo, CEO of the \gls{wrc}. The agenda was as follows:
+
+
+\begin{table}[!htbp]
+  \begin{center}
+\caption{Agenda for the media event held on 30 March 2018.}
+\label{table:launch}
+\begin{tabular}{ l l l}
+\toprule
+9:00 & Registration and TEA & \\
+10:00 & Introduction and welcome address & Prof VC: NWU \\
+10:10 & DEA Ministerial Address & Dr Edna Molewa \\
+10:30 & Video of the project & \\
+10:35 & Climate data and water resources management & DWS (DDG) \\
+10:45 & SA Radar Network and climate data & Jerry Lengoasa \\
+11:00 & Data in climate and water research & Dr Stanley Liphadzi \\ 
+11:15 & Overview of Radar Research at NWU & Dr Roelof Burger \\
+11:30 & Launch of project & \\
+12:00 & Closure and Vote of Thanks & Prof Refilwe Phaswana-Mafuya \\
+12:10 & Lunch \\
+\bottomrule
+\end{tabular}
+  \end{center}
+\end{table}
+
+\begin{figure}[!htp]
+\includegraphics[width=\textwidth]{LekwenaLaunch-group} \caption[The minister and team during the media event.]{The minister and team during the media event.}
+\label{fig:event}
+\end{figure}
+
+\section{Promotional video of the project}
+
+A professional video was made to promote the project. This was loaded on Youtube (\url{https://www.youtube.com/watch?v=57KKY4zxU88&t=111s}) and is also accessable through the project website.
+
+\begin{figure}[!htp]
+  \begin{center}
+\includegraphics[width=0.7\textwidth]{video} \caption[A frame from the project video.]{A frame from the project video.}
+\label{fig:video}
+  \end{center}
+\end{figure}
+
+\section{A website to serve products in real-time}
+
+A website was set up to serve products to stakeholders in real-time.
+To use and deploy a website on the world wide wed a domain has to be
+bought and registered from a third party. The current domain
+registered is \url{www.lekwenaradar.co.za}. After a domain has been
+registered a developer can build a website to the needs of the
+organisation. The nature of the website and the living laboratory is
+to empower and learn students and graduate students where assisted to
+be directly involved in development of \url{www.lekwenaradar.co.za}.
+
+A GitHub account was set up to facilitate version control of code
+related to data analysis and visualization and to host the website. A
+website is in development to improve the visibility of projects
+completed, currently the \gls{gfs} models, satellite products and the
+Lekwena radar output is showed on the website. The website aims to be
+an simple, efficient platform to view and download data by scientists
+from any research-entity without any concern for affiliation. Students
+will be encouraged to learn interactively from the web platform by
+viewing real-time weather, satellite and forecast data.
+
+\url{www.lekwenaradar.co.za} was deployed using Jekyll and GitHub.
+Jekyll allows websites to be build locally for testing before
+deployment (Figure~\ref{fig:website}). A strategic decision was made
+to keep the website static, this allows for a reliable and easily
+manageable website trough GitHub. Students had to learn basic HTML and
+Markdown to develop the website. A dedicated Linux server was acquired
+for this purpose, the server is similar to radar2 server discussed
+before (Section~\ref{sec:radar2}).
+
+\begin{figure}[!htp]
+\includegraphics[width=\textwidth]{website1.png}
+  \caption[The http://lekwenaradar.co.za website.]{The \url{http://lekwenaradar.co.za} website.}
+ \label{fig:website}
+\end{figure}
+
+
+\subsection{Reanalysis Data}
+
+The \gls{crg} currently has several servers
 running on the \gls{nwu} network (See Chapter~\ref{chap:real-time}).
 Currently Bongani is used as backup solution for radar data and
 configuration files. The second local server is the \textit{Titan5}
@@ -918,7 +1282,9 @@ weather simulations using \gls{wrf} and testing compiling and run time
 options for various climate models.  The \gls{crg} also has access to
 the \gls{ncar} Yellowstone supercomputer for high resolution modeling.
 
-\section{Radar Data} The radar data is stored on both the radar1 and
+\subsection{Radar Data}
+
+The radar data is stored on both the radar1 and
 radar2 servers. It is futher transferred to an onine Dropbox cloud
 storage account. All students have access to a allocated Dropbox
 account where they are required to store all data collected as part of
@@ -927,79 +1293,17 @@ Linux, Windows and Mac clients. Data stored and managed trough this
 cloud solution has been a key part in case of system failure and
 theft.
 
-\section{Satellite Data} Satellite data for the study area are being
+\subsection{Satellite Data}
+
+Satellite data for the study area are being
 served through the project website. These products will be further
 integrated into the project website over the next year.
 
-\begin{figure}
-\includegraphics[width=\textwidth]{ComputerSolutions.pdf}
-\caption[NWU CRG Data Management Setup]{The diagram indicates the
-current work flow related to the NWU CRG data management strategy. The
-data management starts on local computers assigned to all students,
-technicians and researchers. The \gls{crg} has several local servers
-on which data is then stored and managed for access across the project
-team, this includes \textit{bongani} and Drobox. The radar data
-collected feeds directly to two dedicated servers - \textit{titan5}
-and \textit{gaia}. Gaia also hosts the radar visualization that is
-shown on the websites.}
-\label{fig:data_workflow}
-\end{figure}
-
-\section{Observational Data}
+\subsection{Observational Data}
 
 A network of rain gauges are being fitted with modems to provide
 real-time access to rainfall and other weather parameters. These
 datasets are also served through the website.
-
-\section{Data visualization}
-Visualizing data products plays an important role for user friendly interpretation
-and also spatial temporal representation of data. Currently GFS model data is
-visualized every day to provide an 48 hour forecast to users whom access the
-www.lekwenaradar.com. Further development is in place to provide a real-time
-analysis of rainfall trends data in the Mooi River catchment, this is dependant upon
-the deployment of LORA and Foxnet networks. The
-radar products are continually being improved for the web interface.
-
-\section{Cloud Storage}
-For data backup a 2 terabyte Dropbox cloud solution was acquired.
-Dropbox is only used as for backup of data in case of server failure.
-All students have access to a allocated Dropbox account where they are
-required to store all data collected as part of their research.
-Dropbox has been the best cloud solution as it has Linux, Windows and
-Mac clients. Data stored and managed trough this cloud solution has
-been a key part in case of system failure and theft.
-
-\section{Password Management}
-All students and researchers are assigned a LastPass account. LastPass
-is a password manager, users can generate strong random passwords
-that's encrypted through LastPass. Passwords are also randomized
-between accounts to avoid password reuse and avoid security breaches.
-LastPass also allows for storage of ssh keys to access servers.
-
-\section{Connecting CRG projects}
-Figure \ref{fig:data} provides an indication of the holistic nature
-related to the \gls{crg} research.  The major focuses groups include
-the real-time weather and climatology initiatives while the second
-major focus is related to air pollution studies. These two fields are
-not seen as independent pillars within the research group, but instead
-as one major end goal. These two fields are examined to quantitatively
-understand the effects that each may have on the other.  The main
-motivation behind the research done at the \gls{crg} is to improve the
-lives of the local communities who suffer the most from these impacts
-related to climate change and health problems from pollution.
-
-\begin{figure}[htp]
-\includegraphics[width=\textwidth]{intersectional.pdf}
-\caption[NWU CRG Resrearch Intersections]{The diagram indicates how
-the different sources of data the CRG works with connects to each
-other. All these data sources add up to a significant of amount of
-data collected on a daily basis. Without a structured plan and
-management system data could get lost, mismanaged or never analysed at
-all. One of the main goals of the CRG is to create a sustainable data
-management system that other organisations can use and build upon. The
-CRG also strives to create an open access database where researchers
-and students can access data free of charge} \label{fig:data}
-\end{figure}
 
 \chapter{Conclusions}
 
@@ -1044,8 +1348,24 @@ deliverable. It should be complete by the middle of April 2018.
 %\addcontentsline{toc}{chapter}{Appendix A: Calibration documents}
 %\includepdf[pages={-}]{Bethlehem-calibration.pdf}
 
+\section{Project outcomes}
+
+The expected outcomes of the project includes:
+\begin{itemize}
+\item real-time access to high-resolution rainfall data in the pilot area;
+\item Science graduates capable of evaluating the performance of weather radars and creating customized derived products for real-world application;
+\item Engineering graduates capable of maintaining and re-engineering weather radars;
+\item A high resolution rain-gauge dataset for use by the scientific community;
+\item Radar data for use by the scientific community;
+\item Disdrometer data for use by the scientific community;
+\item A web-based real-time service that provides access to data and derived products;
+\item A methodology to re-engineer old Enterprise radars to extend their lifetime and improve its quality of data;
+\item Cheap weather stations developed using open-source, off-the-shelf and 3D printing technologies for use in community science projects.
+\end{itemize}
+
 \begin{spacing}{0.3}
 \linespread{0.8} \normalsize
+\addcontentsline{toc}{chapter}{References}
 \bibliography{library}
 \end{spacing}
 
